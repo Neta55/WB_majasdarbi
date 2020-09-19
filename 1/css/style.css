@@ -61,3 +61,8 @@ button {
   font-weight: 700;
   padding: 5px;
 }
+
+.index-link {
+  color: rebeccapurple;
+  margin: auto;
+}
