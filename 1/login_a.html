@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. mājasdarbs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="kaste">
+    <h1>Brīnumzemes atslēga</h1>
+    <h4 class="balts atspiest center">Lai nokļūtu brīnumzemē, ievadi datus:</h4>
+    <form action="login_b.html" method="get" class="atspiest center">
+      <label for="name" class="balts">Vārds</label> <input type="text" name="name" id="name" class="w120">
+      <label for="surname" class="balts">Uzvārds</label> <input type="text" name="surname" id="surname" class="w120">
+      <br><br>
+      <label for="tautiba" class="balts">Tautība</label> <input type="text" name="tautiba" id="tautiba" class="w120">
+      <label for="pk" class="balts">Personas kods</label> <input type="text" name="pk" id="pk" class="w120"> <br><br>
+      <label for="sieviete" class="balts">Sieviete</label><input type="radio" name="dzimums" id="sieviete">
+      <label for="virietis" class="balts">Vīrietis</label><input type="radio" name="dzimums" id="virietis">
+      <label for="nav" class="balts">Trešais dzimums</label><input type="radio" name="dzimums" id="nav"><br><br>
+      <label for="ticiba" class="balts">Reliģiskā pārliecība</label>
+      <select name="ticiba" id="ticiba">
+        <option value="1">Kristietība</option>
+        <option value="2">Islāms</option>
+        <option value="3">Jūdaisms</option>
+        <option value="4">Budisms</option>
+        <option value="5">Ateisms</option>
+        <option value="6">Cita</option>
+      </select><br><br>
+
+      <label for="adrese" class="balts">Mājas adrese</label> <input type="text" name="adrese" id="adrese" class="w200">
+
+      <label for="kods" class="balts">Durvju kods</label>
+      <input type="text" name="kods" id="kods" class="w50"> <br><br>
+
+      <button type="submit">IENĀKT BRĪNUMZEMĒ</button>
+    </form>
+  </div>
+</body>
+
+</html>
