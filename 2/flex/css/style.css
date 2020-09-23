@@ -1,8 +1,30 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-  background-image: url("/WB_majasdarbi/1/bildes/TILE.svg");
-  background-size: 40px;
-  align-content: center;
+  background-image: url("/WB_majasdarbi/2/flex/bildes/TILE.svg");
+  background-size: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 60%;
+  height: auto;
+  padding: 0 0 20px;
+  margin: -8px auto;
+  background-color: white;
+}
+
+header {
+  width: 95%;
+  background-color: green;
+  color: white;
+  padding: 5px;
+  margin: 0 auto 10px;
+  text-align: center;
 }
 
 h1 {
@@ -17,16 +39,21 @@ label {
 }
 
 
+
+
 .w120 {
-  width: 120px;
+  width: 200px;
+  height: 20px;
 }
 
 .w200 {
-  width: 200px;
+  min-width: 200px;
+  height: 20px;
 }
 
 .w50 {
-  width: 50px;
+  max-width: 50px;
+  height: 20px;
 }
 
 .balts {
@@ -42,29 +69,91 @@ label {
 }
 
 .kaste {
-  background-color: blueviolet;
-  width: 500px;
+  background-color: green;
+  width: 95%;
   height: auto;
-  margin: 50px auto;
+  margin: 5px auto 20px;
   padding: 10px 5px;
 }
 
-.input {
-  width: auto;
+
+select {
+  height: 20px;
 }
 
 button {
   margin: 10px;
   background-color: white;
-  color: blueviolet;
-  font-size: larger;
+  color: green;
+  width: fit-content;
+  height: 35px;
+  font-size: 18px;
   font-weight: 700;
-  padding: 5px;
+  line-height: 35px;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 35px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 1px 1px 6px darkgreen;
+}
+
+button:hover {
+  color: red;
+  box-shadow: 1px 1px 6px red;
 }
 
 .index-link {
-  color: blueviolet;
+  color: green;
   margin: 10px auto;
-  width: 500px;
+  max-width: fit-content;
+  padding: 0 10px;
+  height: auto;
   text-align: center;
+  background-color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
+nav {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 5px;
+}
+
+nav div {
+  /* flex-grow: 1; */
+  width: 18%;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  background-color: darkgreen;
+
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  nav div {
+    width: 100%;
+  }
 }
