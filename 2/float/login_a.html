@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2. md -> FLEX</title>
+  <title>2. md -> FLOATS</title>
   <link rel="stylesheet" href="css/style.css">
   <link
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
@@ -19,37 +19,41 @@
       </div>
     </header>
     <nav>
-      <div>MENU-1</div>
-      <div>MENU-2</div>
-      <div>MENU-3</div>
-      <div>MENU-4</div>
-      <div>MENU-5</div>
+      <ul>
+        <li>MENU-1</li>
+        <li>MENU-2</li>
+        <li>MENU-3</li>
+        <li>MENU-4</li>
+        <li>MENU-5</li>
+      </ul>
     </nav>
+    <div class="clearfix"></div>
     <main>
 
       <div class="kaste">
         <h1>Brīnumzemes atslēga</h1>
         <h4 class="balts atspiest center">Lai nokļūtu brīnumzemē, ievadi datus:</h4>
-        <form action="/WB_majasdarbi/2/flex/login_b.html" method="get" class="center">
-          <div class="flex">
-            <div class="atspiest"> <label for="name" class="balts">Vārds</label> <input type="text" name="name"
-                id="name" class="w200"></div>
-            <div class="atspiest"> <label for="surname" class="balts">Uzvārds</label> <input type="text" name="surname"
-                id="surname" class="w200"></div>
-            <div class="atspiest">
+        <form action="/WB_majasdarbi/2/float/login_b.html" method="get" class="center">
+          <div class="left">
+            <div class="atspiest float-left"> <label for="name" class="balts">Vārds</label> <input type="text"
+                name="name" id="name" class="w200"></div>
+            <div class="atspiest float-right"> <label for="surname" class="balts">Uzvārds</label> <input type="text"
+                name="surname" id="surname" class="w200"></div>
+            <div class="clearfix"></div>
+            <div class="atspiest float-left">
               <label for="tautiba" class="balts">Tautība</label> <input type="text" name="tautiba" id="tautiba"
                 class="w200">
             </div>
-            <div class="atspiest"><label for="pk" class="balts">Personas kods</label> <input type="text" name="pk"
-                id="pk" class="w200"></div>
-
-            <div class="atspiest"><label for="adrese" class="balts">Mājas adrese</label> <input type="text"
+            <div class="atspiest float-right"><label for="pk" class="balts">Personas kods</label> <input type="text"
+                name="pk" id="pk" class="w200"></div>
+            <div class="clearfix"></div>
+            <div class="atspiest float-left"><label for="adrese" class="balts">Adrese</label> <input type="text"
                 name="adrese" id="adrese" class="w200"></div>
 
-            <div class="atspiest"><label for="kods" class="balts">Durvju kods</label>
+            <div class="atspiest float-right"><label for="kods" class="balts">Durvju kods</label>
               <input type="text" name="kods" id="kods" class="w200">
             </div>
-            <div class="atspiest"><label for="ticiba" class="balts">Reliģiskā pārliecība</label>
+            <div class="atspiest float-left"><label for="ticiba" class="balts">Reliģiskā pārliecība</label>
               <select name="ticiba" id="ticiba">
 
                 <option value="1">Kristietība</option>
@@ -60,15 +64,17 @@
                 <option value="6">Cita</option>
               </select>
             </div>
+
+            <div class="atspiest float-right">
+              <label for="sieviete" class="balts">Sieviete</label> <input type="radio" name="dzimums" id="sieviete">
+
+              <label for="virietis" class="balts">Vīrietis</label> <input type="radio" name="dzimums" id="virietis">
+
+              <label for="nav" class="balts">Bez dzimuma</label> <input type="radio" name="dzimums" id="nav">
+
+            </div>
           </div>
-          <div class="flex atspiest">
-            <div> <label for="sieviete" class="balts">Sieviete</label><input type="radio" name="dzimums" id="sieviete">
-            </div>
-            <div><label for="virietis" class="balts">Vīrietis</label><input type="radio" name="dzimums" id="virietis">
-            </div>
-            <div> <label for="nav" class="balts">Trešais dzimums</label><input type="radio" name="dzimums" id="nav">
-            </div>
-          </div>
+          <div class="clearfix"></div>
           <button type="submit">IENĀKT BRĪNUMZEMĒ</button>
 
 

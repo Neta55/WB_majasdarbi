@@ -1,5 +1,5 @@
 body {
-  background-image: url("/WB_majasdarbi/2/flex/bildes/TILE.svg");
+  background-image: url("/WB_majasdarbi/2/float/bildes/TILE.svg");
   background-size: 50px;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -20,7 +20,7 @@ body {
 
 header {
   width: 95%;
-  background-color: green;
+  background-color: cadetblue;
   color: white;
   padding: 5px;
   margin: 0 auto 10px;
@@ -42,7 +42,7 @@ label {
 
 
 .w200 {
-  width: 200px;
+  width: 150px;
   height: 20px;
 }
 
@@ -56,12 +56,16 @@ label {
   text-align: center;
 }
 
+.left {
+  text-align: left;
+}
+
 .atspiest {
   margin: 10px
 }
 
 .kaste {
-  background-color: green;
+  background-color: cadetblue;
   width: 95%;
   height: auto;
   margin: 5px auto 20px;
@@ -74,9 +78,9 @@ select {
 }
 
 button {
-  margin: 10px;
+  margin: 10px auto;
   background-color: white;
-  color: green;
+  color: cadetblue;
   width: fit-content;
   height: 35px;
   font-size: 18px;
@@ -87,7 +91,7 @@ button {
   border-radius: 35px;
   cursor: pointer;
   border: none;
-  box-shadow: 1px 1px 6px darkgreen;
+  box-shadow: 1px 1px 6px black;
 }
 
 button:hover {
@@ -96,7 +100,7 @@ button:hover {
 }
 
 .index-link {
-  color: green;
+  color: cadetblue;
   margin: 10px auto;
   max-width: fit-content;
   padding: 0 10px;
@@ -105,47 +109,45 @@ button:hover {
   background-color: white;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.float-left {
+  float: left;
+  width: 45%;
 }
 
-@media screen and (max-width: 700px) {
-  .flex {
-    display: flex;
-    flex-direction: column;
-
-  }
+.float-right {
+  float: right;
+  width: 45%;
 }
+
 
 nav {
   width: 95%;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px auto 5px;
+  margin: 20px auto 0;
 }
 
-nav div {
-  /* flex-grow: 1; */
-  width: 18%;
+nav ul li {
+  width: 50px;
   height: 20px;
   line-height: 20px;
   color: white;
   font-size: 10px;
   text-align: center;
-  background-color: darkgreen;
-
+  background-color: black;
+  float: right;
+  margin: 5px;
 }
 
-@media screen and (max-width: 700px) {
-  nav {
-    display: flex;
-    flex-direction: column;
+nav ul li:nth-last-child(5) {
+  margin-right: 0px;
+}
 
-  }
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
 
-  nav div {
-    width: 100%;
-  }
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
 }
