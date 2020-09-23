@@ -111,31 +111,28 @@ button:hover {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 700px) {
-  .flex {
-    display: flex;
-    flex-direction: column;
-
-  }
-}
 
 nav {
   width: 95%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin: 20px auto 5px;
 }
 
 nav div {
-  /* flex-grow: 1; */
-  width: 18%;
+  width: 50px;
   height: 20px;
   line-height: 20px;
   color: white;
   font-size: 10px;
   text-align: center;
-  background-color: darkgreen;
+  background-color: black;
+  margin: 5px;
 
+}
+
+nav div:nth-last-child(1) {
+  margin-right: 0px;
 }
 
 @media screen and (max-width: 700px) {
