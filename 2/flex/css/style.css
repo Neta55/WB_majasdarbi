@@ -36,7 +36,13 @@ h1 {
 label {
   font-weight: 200;
   display: inline-block;
+  width: 95px;
+  text-align: left;
 
+}
+
+.auto {
+  width: auto;
 }
 
 
