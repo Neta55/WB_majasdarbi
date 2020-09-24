@@ -99,6 +99,16 @@ label {
     "poga poga"
 }
 
+.kaste-b {
+  grid-area: main;
+  background-color: palevioletred;
+  width: 95%;
+  height: auto;
+  margin: 0px auto 10px;
+  padding: 10px 5px;
+
+}
+
 .vr {
   grid-area: vr;
 }
@@ -212,6 +222,7 @@ nav div:nth-last-child(1) {
 
   nav div {
     width: 100%;
+    margin: 5px 0;
   }
 
 
@@ -227,6 +238,11 @@ nav div:nth-last-child(1) {
       "durvis"
       "rel"
       "dzim"
-      "poga"
+      "poga";
+    justify-items: center;
+  }
+
+  .container {
+    width: 80%;
   }
 }
