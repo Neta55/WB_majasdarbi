@@ -27,6 +27,19 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.index-link {
+
+  width: auto;
+  height: auto;
+  text-align: center;
+  color: rosybrown;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
 @media screen and (max-width: 500px) {
   .container {
     width: 300px;
