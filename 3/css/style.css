@@ -1,0 +1,40 @@
+body {
+  background-image: url(https://media.giphy.com/media/26DMWExfbZSiV0Btm/giphy.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-image: url("/WB_majasdarbi/3/img/watch.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 500px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#clock {
+  font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 2.8em;
+  position: fixed;
+  width: auto;
+  height: auto;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 300px;
+    height: 150px;
+
+  }
+
+  #clock {
+    font-size: 1.5em;
+  }
+}
