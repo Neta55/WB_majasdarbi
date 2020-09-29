@@ -1,0 +1,78 @@
+body {
+  background-image: url("/WB_majasdarbi/4/bildes/TILE.svg");
+  background-size: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 60%;
+  height: auto;
+  margin: 50px auto;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "header"
+    "objects"
+    "footer"
+  ;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #FF0066;
+  color: white;
+  font-weight: 700;
+}
+
+#objects {
+  grid-area: main;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.klucis {
+  border: #FF0066 solid 2px;
+  border-radius: 10px;
+  margin: 30px 5px;
+  padding: 10px;
+  color: #FF0066;
+}
+
+
+li {
+  display: list-item;
+  text-align: left;
+  list-style-type: square;
+
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 15px;
+
+}
+
+.margin0,
+h2 {
+  margin: 0;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  background-color: #33FFFF;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+}
