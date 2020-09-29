@@ -22,7 +22,7 @@ function a(b) {
 }
 
 // fetch('http://127.0.0.1/api/inboxWeather/')
-fetch('/WB_majasdarbi/4/inboxWeather/')
+fetch('/WB_majasdarbi/4/inboxWeather/inboxWeather.json')
   .then(res => res.json())
   .then(data => callback(data))
   .catch(e => console.log(e))
