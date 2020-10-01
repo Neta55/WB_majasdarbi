@@ -52,39 +52,19 @@ var majasdObj = [{
 ]
 
 var out = ''
-out += `<div class="klucis">`
-out += `<h2>${majasdObj[0].name}</h2>`
-out += `<ul>`
-out += `<li>Augums: ${majasdObj[0].notes[0]} cm</li>`
-out += `<li>Svars: ${majasdObj[0].notes[1]} kg</li>`
-out += `<li>Vecums: ${majasdObj[0].notes[2]} gadi</li>`
-out += `</ul>`
-out += `</div>`
-out += `<div class="klucis">`
-out += `<h2>${majasdObj[1].name}</h2>`
-out += `<ul>`
-out += `<li>Augums: ${majasdObj[1].notes[0]} cm</li>`
-out += `<li>Svars: ${majasdObj[1].notes[1]} kg</li>`
-out += `<li>Vecums: ${majasdObj[1].notes[2]} gadi</li>`
-out += `</ul>`
-out += `</div>`
-out += `<div class="klucis">`
-out += `<h2>${majasdObj[2].name}</h2>`
-out += `<ul>`
-out += `<li>Augums: ${majasdObj[2].notes[0]} cm</li>`
-out += `<li>Svars: ${majasdObj[2].notes[1]} kg</li>`
-out += `<li>Vecums: ${majasdObj[2].notes[2]} gadi</li>`
-out += `</ul>`
-out += `</div>`
-out += `<div class="klucis">`
-out += `<h2>${majasdObj[3].name}</h2>`
-out += `<ul>`
-out += `<li>Augums: ${majasdObj[3].notes[0]} cm</li>`
-out += `<li>Svars: ${majasdObj[3].notes[1]} kg</li>`
-out += `<li>Vecums: ${majasdObj[3].notes[2]} gadi</li>`
-out += `</ul>`
-out += `</div>`
+majasdObj.forEach(element => {
+  out += `<div class="klucis">`
+  out += `<h2>${element.name}</h2>`
+  out += `<ul>`
+  out += `<li>Augums: ${element.notes[0]} cm</li>`
+  out += `<li>Svars: ${element.notes[1]} kg</li>`
+  out += `<li>Vecums: ${element.notes[2]} gadi</li>`
 
+  out += `</ul>`
+  out += `</div>`
+
+
+});
 
 
 document.getElementById('objects').innerHTML = out
