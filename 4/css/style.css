@@ -12,7 +12,6 @@ body {
   width: 60%;
   height: auto;
   margin: 50px auto;
-  background-color: white;
   display: grid;
   grid-template-columns: 100%;
   grid-template-areas:
@@ -33,17 +32,18 @@ header {
 }
 
 #objects {
-  grid-area: main;
+  grid-area: objects;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   background-color: white;
+  padding: 20px 0;
 }
 
 .klucis {
   border: #FF0066 solid 2px;
   border-radius: 10px;
-  margin: 30px 5px;
+  margin: 20px;
   padding: 10px;
   color: #FF0066;
 }
@@ -75,4 +75,9 @@ footer {
   color: white;
   font-weight: 700;
   padding: 5px;
+}
+
+.photo {
+  width: 150px;
+  height: auto;
 }
