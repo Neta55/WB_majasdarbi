@@ -1,0 +1,235 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+   <meta charset="utf-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="css/style.css"> 
+</head> 
+<body> 
+  <div class="container">
+    <header>
+ <h1 class="margin0">JavaScript looping & functions & prototypes</h1>
+
+    </header>
+    <main id="objects">
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 1. create a loop that prints every second number starting from 10 and ending with 20</h5>
+      <div id="task1" class="solution">
+
+      <script> let out = ""
+      for (i=10; i<=20; i+=2) {out += `<p>${i}</p>`}
+      document.getElementById('task1').innerHTML = out
+      </script>
+    
+      </div>
+      </div>
+
+      
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 2. loop thru an array and print out it's content</h5>
+      <div id="task2" class="solution">
+        
+      <script> 
+      let out2 = ""
+const arr1 = [10, 11, 23, 45, 64]
+arr1.forEach(function(val, i) {
+ console.log("Vērtība: "+val+ ", indekss: "+i+ ".");
+ out2 += `<p>${"Vērtība: "+val+ ", indekss: "+i}</p>`})
+      document.getElementById('task2').innerHTML = out2
+      </script>
+    
+      </div>
+      </div>
+     
+
+
+      
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 3. modify array of numbers by multiplying the numbers by itself</h5>
+      <div id="task3" class="solution">
+        
+      <script> 
+      let out3 = ""
+      let arr2 = arr1.map(function(val,i) {
+ console.log("Jaunā vērtība: "+val**2+ ", indekss: "+i+ ".");
+ out3 += `<p>${"Jaunā vērtība: "+val**2+ ", indekss: "+i}</p>`})
+      document.getElementById('task3').innerHTML = out3
+      </script>
+    
+      </div>
+      </div>
+     
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 4. Declare a function that can be called even if it's defined after it is called</h5>
+      <div id="task4" class="solution">
+        
+      <script> 
+
+        before()
+
+function before () {
+    console.log("before")
+    let out4 = "";
+    out4 += `<p>${"Šis <strong>Before</strong> ir izsaukts pirms funkcija ir deklarēta"}</p>`;
+document.getElementById('task4').innerHTML = out4}
+      
+      
+      </script>
+    
+      </div>
+      </div>
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 5. define a function that can be called only after it has been declared</h5>
+      <div id="task5" class="solution">
+        
+      <script> 
+let after = function after () {
+    console.log("After")
+    let out5 = "";
+    out5 += `<p>${"Šo <strong>After</strong> var izsaukt tikai pēc tam, kad funkcija ir deklarēta"}</p>`;
+document.getElementById('task5').innerHTML = out5}
+      
+after()
+      </script>
+    
+      </div>
+      </div>
+
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 6. create an arrow function with two or more parameters</h5>
+      <div id="task6" class="solution">
+        
+      <script> 
+        let arrFn = (name, surname, age) => {
+          console.log("Vārds: "+name+", uzvārds: "+surname+", vecums: "+age);
+          let out6 = "";
+    out6 += `<p>${"Vārds: "+name+", uzvārds: "+surname+", vecums: "+age}</p>`;
+document.getElementById('task6').innerHTML = out6}
+  
+      
+arrFn("Anna", "Ozola", 23)
+
+      </script>
+    
+      </div>
+      </div>
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 7. create a function with unknown amount of parameters</h5>
+      <div id="task7" class="solution">
+        
+      <script> 
+        const bill = function(price_1, price_2, ...price_n) {
+    let totalBill = price_1+price_2;
+
+    price_n.forEach((value) => {
+        totalBill += value;
+    })
+
+    let otherSum = price_n.reduce(function(a, b){
+        return a + b;
+    }, 0);
+
+
+          let out7= "";
+    out7 += `<p>${"Pārtika - "+price_1+" eiro + komunālie maksājumi - "+price_2+" eiro + citi tēriņi - "+otherSum+" eiro, mēneša kopējie izdevumi sanāk "+totalBill+" eiro!"}</p>`;
+document.getElementById('task7').innerHTML = out7}
+bill(210.50, 100, 3.70, 20, 7.5, 23.55)
+ 
+      </script>
+    
+      </div>
+      </div>
+
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 8. create a function that accepts object as an parameters and reads assigns it's key/value pairs to function variables</h5>
+      <div id="task8" class="solution">
+        
+      <script> 
+
+        let persData = (params) => {
+    const {name, surname, age, isEducated} = params;
+
+          console.log("Vārds: "+name+", uzvārds: "+surname+", vecums: "+age+", "+isEducated);
+          let out8 = "";
+    out8 += `<p>${"Vārds: "+name+", uzvārds: "+surname+", vecums: "+age+", "+isEducated}</p>`;
+document.getElementById('task8').innerHTML = out8};
+  
+persData({name: 'Jana', surname: 'Egle', age: 30, isEducated:true});
+
+      </script>
+    
+      </div>
+      </div>
+
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 9.  Use two of built in prototype functions</h5>
+      <div id="task9" class="solution">
+        
+      <script> 
+let datums = new Date()
+console.log(datums);
+let months = ["janvāris","februāris","marts","aprilis", "maijs","jūnijs","jūlijs","augusts","septembris","oktobris","novembris","decembris"];
+       
+       
+    let out9 = "";
+ out9 += `<p>${"Sodien ir <strong>"+datums.getFullYear()+". gada "+datums.getDate()+". "+months[datums.getMonth()]+"</strong>"}</p>`;
+document.getElementById('task9').innerHTML = out9
+
+
+
+
+
+      </script>
+    
+      </div>
+      </div>
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 10.  Create your own prototype
+    1. create new instance
+    2. call a function from it </h5>
+      <div id="task10" class="solution">
+        
+        <script> 
+function User(username, email, password){
+    this.username = username;
+    this.email = email;
+    this.password = password;
+
+    this.getPassword = function() {
+        console.log(this.password);
+    }
+    let out10 = "";
+ out10 += `<p>${"Lietotāja <strong>"+this.username+"</strong> parole ir <strong>"+this.password+"</strong>"}</p>`;
+document.getElementById('task10').innerHTML = out10}
+
+
+let userNr2 = new User("Akuakue", "akuakue@gmail.com", "Parole");
+
+userNr2.getPassword();
+
+
+      </script>
+    
+      </div>
+      </div>
+
+
+
+    </main>
+    <footer>
+      <div class="index-link">
+        <p class="margin0"><a href="/WB_majasdarbi/index.html">Uz mājasdarbu sarakstu</a></p>
+      </div>
+    </footer>
+  </div>
+ 
+</body> 
+</html> 
