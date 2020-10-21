@@ -1,0 +1,188 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+   <meta charset="utf-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="css/style.css"> 
+   <title>JavaScript DOM events & handling</title>
+</head> 
+<body> 
+  <div class="container">
+    <header>
+ <h1 class="margin0">JavaScript DOM events & handling</h1>
+
+    </header>
+    <main id="objects">
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 1. Retrieve the domain name</h5>
+      <div id="task1" class="solution flexy">
+
+      <script> 
+      let out1 = ""
+      out1 += `<p>${"Domain name is <strong>"+window.location.hostname+"</strong>"}</p>`
+      document.getElementById('task1').innerHTML = out1
+      console.log('window.location.origin')
+      </script>
+    
+      </div>
+      </div>
+
+      
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 2. Save and then retrieve some data with localStorage</h5>
+        <label>Name:<input class="name"></label>
+        <button id="saveName"> Save name to localStorage</button>
+        <div class="solution userTable">
+   
+
+
+
+
+    
+  <script>
+document.getElementById('saveName').addEventListener('click', function(){
+  const nameInput = document.getElementsByClassName('name')[0];
+  console.log(nameInput.value);
+
+let users = localStorage.users;
+
+if (users) {
+users=users.split(",");
+users.push(nameInput.value);
+} else {
+  console.log ('no users')
+  users = [];
+  users.push(nameInput.value);
+  console.log(users);
+}
+localStorage.users = users.toString();
+renderTable();
+});
+
+function renderTable() {
+  table=document.getElementsByClassName('userTable')[0];
+  table.innerHTML=""
+const usersArray = localStorage.users.split(",")
+
+  usersArray.forEach(function(name) {
+  table.innerHTML +="<ul><li>" +name+ "</li></ul>";
+  
+});
+}
+renderTable();
+  </script> 
+      
+</div>
+</div>
+
+
+      
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 3. Add some cookies</h5>
+      <div id="task3" class="solution flexy">
+        
+      <script> 
+        let cook = document.cookie = "Šīs ir cookies"
+        console.log(document.cookie)
+      let out3 = ""
+
+ out3 += `<p>${"Pievienoju: <strong>"+cook+"</strong>"}</p>`
+      document.getElementById('task3').innerHTML = out3
+      </script>
+    
+      </div>
+      </div>
+     
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 4. Create a list, loop thru the list elements and add a class to each of the list elements</h5>
+        <button id="change">Change colour</button>
+      <div id="task4" class="solution">
+        <ul id="list4" class="flexy">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        </ul>
+      <script> 
+ document.getElementById('change').addEventListener('click', function() {
+  document.getElementById('list4').classList.toggle('green')
+})
+      
+      
+      
+      </script>
+    
+      </div>
+      </div>
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 5. Handle window: 
+   1. Open new window
+   2. Change it's size
+   3. Write data to it
+   4. Add an event listener that triggers window close</h5>
+   
+      <div id="task5" class="solution flexy">
+        <button id="newWin">New Window</button>
+      <script> 
+        document.getElementById('newWin').addEventListener('click', function() {
+  let win = window.open("", "", {target: "blank"});
+  win.resizeTo(200, 200);
+  win.document.write("<button>Close Window</button>");
+  win.document.getElementsByTagName('button')[0].addEventListener("click", function(){
+    win.close()
+  })
+})
+
+      </script>
+    
+      </div>
+      </div>
+
+
+      <div class="marg-vert-10">
+        <h5 class="margin0"> 6. Create the HTML (css if needed) and add three different event listeners to created HTML</h5>
+        <button id="add1">ADD NEW BUTTON</button>
+      <div id="task6" class="solution flexy">
+        
+      <script> 
+      
+document.getElementById("add1").addEventListener("click", function(){
+ 
+  let delBtn = document.createElement("button");
+  let textnode = document.createTextNode("CLICK, TO DELETE THIS BUTTON");
+  delBtn.appendChild(textnode);
+  document.getElementById("task6").appendChild(delBtn);
+  delBtn.addEventListener("focus", function(){
+    event.target.style.background = 'red'; 
+})
+delBtn.addEventListener("click", function(){
+  delBtn.remove()
+})
+})
+    
+
+
+
+      </script>
+    
+      </div>
+      </div>
+
+      
+
+
+
+    </main>
+    <footer>
+      <div class="index-link">
+        <p class="margin0"><a href="/WB_majasdarbi/index.html">Uz mājasdarbu sarakstu</a></p>
+      </div>
+    </footer>
+  </div>
+ 
+</body> 
+</html> 
