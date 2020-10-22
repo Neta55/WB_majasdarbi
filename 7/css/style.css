@@ -1,0 +1,149 @@
+body {
+  background-image: url("/WB_majasdarbi/4/bildes/TILE.svg");
+  background-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  height: auto;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "header"
+    "objects"
+    "footer"
+  ;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  background-color: #FF0066;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+}
+
+#objects {
+  grid-area: objects;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+}
+
+
+
+.margin0,
+h2,
+h1,
+p {
+  margin: 0;
+}
+
+.marg-vert-10 {
+  margin: 10px 0;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  background-color: #33FFFF;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+}
+
+
+
+
+.input-wraper {
+  width: 100%;
+  /* norāda cik plats inputs, var pikseļos, šiet ir lai aizpildās lauks */
+}
+
+input {
+  width: 100%;
+  /* vai display: block; */
+  border: 1px solid #FF0066;
+  border-radius: 4px;
+  padding: 0 5px;
+  outline: none;
+}
+
+.error-msg {
+  height: 12px;
+  font-size: 10px;
+  color: #FF0066;
+}
+
+table {
+  border-spacing: 5px;
+  margin: -5px;
+
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+td {
+  border: 1px solid #000;
+  padding: 7px;
+  border-radius: 4px;
+}
+
+tr>:nth-child(4),
+tr>:last-child {
+  text-align: center;
+}
+
+tr>:nth-child(2) {
+  font-weight: 900;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#save-btn {
+  background-color: #f06;
+  color: #fff;
+  align-self: center;
+  padding: 5px 30px;
+}
+
+.edit-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #ff0066;
+  color: #fff;
+}
+
+form {
+  border: 2px solid #FF0066;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
