@@ -124,7 +124,31 @@ if (userId) {
   
 renderTable()
 
+
+
+// function responseHandler(response) {
+//   console.log(response)
+//  $('body').append('<ul class="list"></ul>');
+
+// response.data.forEach(function(user) {
+//   $('.list').append('<li>' + user.email +'</li>');
+//   $('.list').append('<img src=' + user.avatar +'>');
+// })
+
+// }
+
+
+
+// $.ajax({
+//   method:"GET",
+//   url: "https://reqres.in/api/users"
+
+// }).done(responseHandler)
+
 })
+
+
+
 
 
 
