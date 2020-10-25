@@ -78,6 +78,7 @@ window.addEventListener('load', function () {
               <td><button class="delete-btn" user-id=`+ index + `>DELETE</button></td>
             </tr>
       `
+
     })
     const editBtns = document.getElementsByClassName('edit-btn');
     Object.values(editBtns).forEach(function (btn) {
@@ -99,7 +100,7 @@ window.addEventListener('load', function () {
       btn.addEventListener('click', function (ev) {
         const userId = ev.target.getAttribute('user-id');
 
-        let userList = JSON.parse(localStorage.userList);
+        const userList = JSON.parse(localStorage.userList);
         userList.splice(userId, 1);
         localStorage.userList = JSON.stringify(userList);
 
@@ -123,6 +124,7 @@ window.addEventListener('load', function () {
   }
 
   renderTable()
+
 
 })
 

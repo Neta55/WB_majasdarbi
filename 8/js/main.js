@@ -69,36 +69,33 @@ $(function () {
 
   function renderTable() {
     const $tBody = $('#user-table').find('tbody');
-
     const usersList = localStorage.userList ? JSON.parse(localStorage.userList) : "";
-
-    const $trExample = $('.tr-example')
+    const $trExample = $('.tr-example');
     $tBody.html('');
     usersList.forEach(function (user, index) {
-      const $newTr = $trExample.clone();
-      $newTr.show();
-      user = JSON.parse(user)
-      const nrpk = parseInt(index) + 1
-      $newTr.find('.nrpk').text(nrpk + '.')
-      $newTr.find('.username').text(user.username)
-      $newTr.find('.email').text(user.email)
-      $newTr.find('.edit-btn').attr('user-id', index)
-      $newTr.find('.delete-btn').attr('user-id', index)
+      const $newTr = $trExample.clone().show();
+      user = JSON.parse(user);
+      const nrpk = parseInt(index) + 1;
+      $newTr.find('.nrpk').text(nrpk + '.');
+      $newTr.find('.username').text(user.username);
+      $newTr.find('.email').text(user.email);
+      $newTr.find('.edit-btn').attr('user-id', index);
+      $newTr.find('.delete-btn').attr('user-id', index);
       $tBody.append($newTr);
 
     })
 
     $('.edit-btn').on('click', function () {
       const userId = $(this).attr('user-id');
-      console.log(userId);
       const userList = JSON.parse(localStorage.userList);
       let user = userList[userId];
       user = JSON.parse(user);
 
       // const $form = $('#user-form');
-      // $form.find((row)=> row.name==='username').value = user.username;
-      // $form.find((row)=> row.name==='email').value = user.email;
-      // $form.find((row)=> row.name==='user-id').value =  userId;
+      // const formData = $form.serializeArray();
+      // formData.find((row) => row.name === 'username').value = user.username;
+      // formData.find((row) => row.name === 'email').value = user.email;
+      // formData.find((row) => row.name === 'user-id').value = userId;
 
 
       const form = document.getElementById('user-form').elements;
