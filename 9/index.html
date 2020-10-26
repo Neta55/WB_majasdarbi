@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/WB_majasdarbi/9/css/style.css">
+  <title>FE project</title>
+  <script src="/WB_majasdarbi/9/js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <button id="open-btn" class="open-btn">OPEN <span class="transparent">0</span> FORM</button>
+
+    <form id="recipient-form" class="recipient-form" action="" novalidate>
+      <div class="input-wraper">
+        <label>
+          Name: <input name="recipient-name">
+        </label>
+        <div class="error-msg recipient-name" name="error-msg recipient-name"></div>
+        <label>
+          Email: <input type="email" name="email">
+        </label>
+        <div class="error-msg email" name="error-msg email"></div>
+        <label> <input id="check-send" name="check-send" type="checkbox" class="one-line" value="Don't send">
+          I want to receive news</label>
+        <div class="input-wraper">
+          <label id="send-option-lab" name="send-option" class=" hidden">
+
+            Please send me notifications every: <select id="send-option" class="hidden">
+              <option selected value=""></option>
+              <option value="day">day</option>
+              <option value="week">week</option>
+              <option value="month">month</option>
+              <option value="year">year</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <button type="button" id="save-btn">ADD RECIPIENT</button>
+      <input type="hidden" name="recipient-id">
+      <button type="button" id="close-form-btn">CLOSE FORM</button>
+
+
+    </form>
+
+
+
+
+    <table id="recipient-table" class="recipient-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Send?</th>
+          <th>How often</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+
+
+
+
+    <footer>
+      <div class="index-link">
+        <p class="margin0"><a href="/WB_majasdarbi/index.html">Uz mājasdarbu sarakstu</a></p>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

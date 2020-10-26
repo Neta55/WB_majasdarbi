@@ -73,12 +73,13 @@ $(function () {
     const $trExample = $('.tr-example');
     $tBody.html('');
     usersList.forEach(function (user, index) {
-      const $newTr = $trExample.clone().show();
+      const $newTr = $trExample.first().clone().show();
+      console.log($newTr)
       user = JSON.parse(user);
       const nrpk = parseInt(index) + 1;
-      $newTr.find('.nrpk').text(nrpk + '.');
-      $newTr.find('.username').text(user.username);
-      $newTr.find('.email').text(user.email);
+      $newTr.find('td.nrpk').text(nrpk + '.');
+      $newTr.find('td.username').text(user.username);
+      $newTr.find('td.email').text(user.email);
       $newTr.find('.edit-btn').attr('user-id', index);
       $newTr.find('.delete-btn').attr('user-id', index);
       $tBody.append($newTr);

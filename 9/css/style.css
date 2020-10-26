@@ -1,0 +1,176 @@
+body {
+  background-image: url("/WB_majasdarbi/9/img/TILE.svg");
+  background-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  padding-bottom: 30px;
+  position: relative;
+
+}
+
+form {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 200px;
+  flex-direction: column;
+  height: 90vh;
+  background-color: #FF0066;
+  color: white;
+  padding: 10px;
+  display: none;
+  /* display: flex; */
+
+}
+
+.show-form {
+  display: flex;
+}
+
+.open-btn {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  width: 30px;
+  height: 200px;
+  background-color: #000;
+  color: white;
+  border-radius: 0;
+}
+
+.transparent {
+  color: rgba(255, 255, 255, 0);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 30px;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  font-weight: 700;
+  background-color: violet;
+
+}
+
+
+
+
+.input-wraper {
+  width: 100%;
+  /* norāda cik plats inputs, var pikseļos, šeit ir lai aizpildās viss atvēlētais lauks */
+}
+
+.one-line {
+  display: inline-block;
+
+}
+
+input {
+  display: block;
+  border: 1px solid #FF0066;
+  border-radius: 4px;
+  padding: 0 5px;
+  outline: none;
+}
+
+
+.error-msg {
+  height: 12px;
+  font-size: 10px;
+  color: white;
+}
+
+.recipient-table {
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  border-spacing: 5px;
+  margin: -5px;
+
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+td {
+  border: 1px solid #000;
+  padding: 7px;
+  border-radius: 4px;
+}
+
+tr {
+  background-color: #fff;
+}
+
+
+tr>:last-child {
+  text-align: center;
+}
+
+tr>:nth-child(2) {
+  font-weight: 900;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#save-btn {
+  background-color: #fff;
+  color: #f06;
+  padding: 5px 30px;
+  margin-top: 20px;
+}
+
+
+
+.delete-btn {
+  background-color: #fff;
+  color: #ff0066;
+
+}
+
+
+#send-options {
+  margin-top: 10px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+#close-form-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  border-radius: 0;
+
+}
