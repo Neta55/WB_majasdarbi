@@ -18,7 +18,6 @@ body {
 form {
   position: absolute;
   top: -8px;
-  left: -208px;
   width: 200px;
   flex-direction: column;
   height: 90vh;

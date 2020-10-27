@@ -25,7 +25,6 @@ window.addEventListener('load', function () {
     function disapearing() {
       if (position == -208) {
         clearInterval(id);
-        form.classList.add('hidden')
       } else {
         position--;
         form.style.left = position + 'px';
@@ -93,9 +92,11 @@ window.addEventListener('load', function () {
         `
 
       document.getElementById('popup-btn').addEventListener('click', function () {
-        formDisapear()
+
         popupDisapear()
+        formDisapear()
         renderTable()
+        document.getElementById('recipient-form').reset()
       })
 
     } else {
@@ -198,6 +199,7 @@ window.addEventListener('load', function () {
   }
 
   renderTable()
+
 
 })
 
