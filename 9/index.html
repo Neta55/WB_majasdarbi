@@ -11,9 +11,9 @@
 
 <body>
   <div class="container">
-    <button id="open-btn" class="open-btn">OPEN <span class="transparent">0</span> FORM</button>
+    <button id="open-btn" class="open-btn">OPEN <span>0</span> FORM</button>
 
-    <form id="recipient-form" class="recipient-form" action="" novalidate style="left: -208px;">
+    <form id="recipient-form" class="recipient-form" action="" novalidate style="left: -200px;">
       <div class="input-wraper">
         <label>
           Name: <input name="recipient-name">
@@ -23,25 +23,24 @@
           Email: <input type="email" name="email">
         </label>
         <div class="error-msg email" name="error-msg email"></div>
-        <label> <input id="check-send" name="check-send" type="checkbox" class="one-line" value="Don't send">
+        <label> <input id="check-send" name="check-send" type="checkbox" class="one-line margin-t20 checkbox"
+            value="Don't send">
           I want to receive news</label>
-        <div class="input-wraper">
-          <label id="send-option-lab" name="send-option" class=" hidden">
+        <div class="input-wraper margin-t20">
+          <label id="send-option-lab" name="send-option" class="one-line hidden">
 
-            Please send me notifications every: <select id="send-option">
+            Please send me notifications <select id="send-option">
               <option selected value="" id="empty-option"></option>
-              <option value="day">day</option>
-              <option value="week">week</option>
-              <option value="month">month</option>
-              <option value="year">year</option>
+              <option value="every day">every day</option>
+              <option value="every week">every week</option>
+              <option value="every month">every month</option>
+              <option value="every year">every year</option>
             </select>
-          </label>
+            .</label>
         </div>
       </div>
       <button type="button" id="add-btn">ADD</button>
       <input type="hidden" name="recipient-id">
-      <!-- <button type="button" id="close-form-btn">CLOSE FORM</button> -->
-
 
     </form>
 
@@ -71,9 +70,9 @@
 
 
     <footer>
-      <div class="index-link">
-        <p class="margin0"><a href="/WB_majasdarbi/index.html">Uz mājasdarbu sarakstu</a></p>
-      </div>
+
+      <p class="index-link"><a href="/WB_majasdarbi/index.html">Uz mājasdarbu sarakstu</a></p>
+
     </footer>
   </div>
 

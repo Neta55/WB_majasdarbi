@@ -1,6 +1,6 @@
 body {
   background-image: url("/WB_majasdarbi/9/img/TILE.svg");
-  background-size: 20px;
+  background-size: 40px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -9,128 +9,10 @@ body {
 }
 
 .container {
-  min-height: 100vh;
-  padding-bottom: 30px;
-  position: relative;
-
+  height: 100vh;
+  width: 100vw;
 }
 
-form {
-  position: absolute;
-  top: -8px;
-  width: 200px;
-  flex-direction: column;
-  height: 90vh;
-  background-color: #FF0066;
-  color: white;
-  padding: 10px;
-  display: flex;
-
-
-}
-
-
-
-.show-form {
-  left: -8px;
-}
-
-.open-btn {
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  width: 30px;
-  height: 200px;
-  background-color: #000;
-  color: white;
-  border-radius: 0;
-}
-
-.transparent {
-  color: rgba(255, 255, 255, 0);
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-
-  width: 100%;
-  height: 30px;
-  line-height: 0;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  font-weight: 700;
-  background-color: violet;
-
-}
-
-
-
-
-.input-wraper {
-  width: 100%;
-  /* norāda cik plats inputs, var pikseļos, šeit ir lai aizpildās viss atvēlētais lauks */
-}
-
-.one-line {
-  display: inline-block;
-
-}
-
-input {
-  display: block;
-  border: 1px solid #FF0066;
-  border-radius: 4px;
-  padding: 0 5px;
-  outline: none;
-}
-
-
-.error-msg {
-  height: 12px;
-  font-size: 10px;
-  color: white;
-}
-
-.recipient-table {
-  position: absolute;
-  top: 20px;
-  left: 250px;
-  min-width: 60%;
-  border-spacing: 5px;
-  margin: -5px;
-
-}
-
-th {
-  background-color: #000;
-  color: #fff;
-  border-radius: 4px;
-}
-
-td {
-  border: 1px solid #000;
-  padding: 7px;
-  border-radius: 4px;
-}
-
-tr {
-  background-color: #fff;
-}
-
-
-tr>:last-child {
-  text-align: center;
-}
-
-tr>:nth-child(2) {
-  font-weight: 900;
-}
 
 button {
   outline: none;
@@ -141,50 +23,189 @@ button {
   font-weight: 700;
 }
 
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.open-btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 200px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  word-wrap: break-word;
+  background-color: #000;
+  color: white;
+  border-radius: 0;
+}
+
+.open-btn span {
+  color: rgba(255, 255, 255, 0);
+}
+
+.open-btn:hover {
+  color: #f0f;
+}
+
+
+form {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ee82ee;
+  color: white;
+  padding: 10px;
+}
+
+.input-wraper {
+  width: 100%;
+
+}
+
+input {
+  width: 100%;
+  padding: 0 5px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+input:hover {
+  border: 1px solid #000;
+}
+
+.one-line {
+  display: inline-block;
+
+}
+
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  margin-left: 0;
+  margin-bottom: -3px;
+  cursor: pointer;
+
+}
+
+.margin-t20 {
+  margin-top: 20px;
+}
+
+.error-msg {
+  height: 12px;
+  font-size: 10px;
+  color: #000;
+}
+
+#recipient-table {
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  min-width: 60%;
+  border-spacing: 5px;
+  margin: -5px;
+
+}
+
+#recipient-table th {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+#recipient-table td {
+  border: 1px solid #000;
+  padding: 7px;
+  border-radius: 4px;
+}
+
+#recipient-table tr {
+  background-color: #fff;
+}
+
+
+#recipient-table tr>:last-child {
+  text-align: center;
+}
+
+#recipient-table tr>:nth-child(2) {
+  font-weight: 900;
+}
+
+
 #add-btn {
   background-color: #fff;
-  color: #f06;
+  color: #ee82ee;
   padding: 5px 30px;
   margin-top: 20px;
+}
+
+#add-btn:hover {
+  background-color: #000;
+  color: #f0f;
+}
+
+#add-btn:active {
+  transform: scale(0.9);
 }
 
 
 
 .delete-btn {
+  padding: 0 15px;
+  border-radius: 0px;
   background-color: #fff;
-  color: #ff0066;
+  color: #ee82ee;
 
 }
 
-
-#send-options {
-  margin-top: 10px;
+.delete-btn:hover {
+  background-color: #fff;
+  color: #f0f;
 }
 
+.delete-btn:active {
+  transform: scale(0.9);
+}
 
 #popup-btn {
-
-  background-color: #f06;
+  background-color: #ee82ee;
   color: #fff;
   width: 100%;
   border-radius: 4px;
+}
 
+#popup-btn:hover {
+  background-color: #f0f;
+}
+
+#popup-btn:active {
+  transform: scale(0.9);
 }
 
 #pop-up {
   position: fixed;
-  width: 300px;
-  height: 150px;
-  background-color: #fff;
-  color: #ff0066;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  align-content: center;
+  width: 300px;
+  height: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  background-color: #fff;
+  color: #ee82ee;
   text-align: center;
   padding: 20px;
 
@@ -194,10 +215,10 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
   z-index: 5;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.8);
 
 
 }
@@ -208,27 +229,27 @@ button {
 
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffcc;
 
-animation: fadeIn 1s;
 }
 
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
 
-  to {
-    opacity: 1;
-  }
-}
+footer .index-link,
+.index-link:link,
+.index-link:visited {
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  color: white;
+  line-height: 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
 }

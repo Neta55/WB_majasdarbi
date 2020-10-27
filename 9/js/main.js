@@ -6,24 +6,25 @@ window.addEventListener('load', function () {
 
   function formApear() {
     const form = document.getElementById('recipient-form');
-    let position = -208;
+    let position = -200;
     const id = setInterval(apearing, 5);
     function apearing() {
-      if (position == -8) {
+      if (position == 0) {
         clearInterval(id);
       } else {
         position++;
         form.style.left = position + 'px';
       }
     }
+
   }
 
   function formDisapear() {
     const form = document.getElementById('recipient-form');
-    let position = -8;
+    let position = 0;
     const id = setInterval(disapearing, 5);
     function disapearing() {
-      if (position == -208) {
+      if (position == -200) {
         clearInterval(id);
       } else {
         position--;
