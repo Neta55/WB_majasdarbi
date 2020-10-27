@@ -1,57 +1,61 @@
 window.addEventListener('load', function () {
-  // document.getElementById('open-btn').addEventListener('click', function () {
-  //   document.getElementById('recipient-form').classList.add('show-form')
-  // })
 
   document.getElementById('open-btn').addEventListener('click', function () {
+    formApear()
+  })
+
+  function formApear() {
     const form = document.getElementById('recipient-form');
     let position = -208;
     const id = setInterval(apearing, 5);
     function apearing() {
       if (position == -8) {
         clearInterval(id);
-        form.classList.add('show-form')
       } else {
         position++;
         form.style.left = position + 'px';
       }
     }
-  })
+  }
 
-  // function formApear() {
-  //   const form = document.getElementById('recipient-form');
-  //   const width = 0;
-  //   const id = setInterval(apearing, 10);
-  //   function apearing() {
-  //     if (width == 100) {
-  //       clearInterval(id);
-  //     } else {
-  //       width++;
-  //       form.style.width = width + '%';
-  //     }
-  //   }
-  // }
+  function formDisapear() {
+    const form = document.getElementById('recipient-form');
+    let position = -8;
+    const id = setInterval(disapearing, 5);
+    function disapearing() {
+      if (position == -208) {
+        clearInterval(id);
+        form.classList.add('hidden')
+      } else {
+        position--;
+        form.style.left = position + 'px';
+      }
+    }
+  }
+
+  function popupDisapear() {
+    const cover = document.getElementById('cover')
+    cover.classList.add('hidden')
+    const popUp = document.getElementById('pop-up')
+    popUp.classList.add('hidden')
+  }
+
+
 
   const checkedValue = document.getElementById('check-send')
   checkedValue.addEventListener('click', function () {
-
     if (checkedValue.checked) {
       checkedValue.setAttribute('value', 'Must send');
       const sendOptionLab = document.getElementById('send-option-lab')
       sendOptionLab.classList.remove('hidden');
       const emptyOption = document.getElementById('empty-option');
       emptyOption.remove()
-
     } else {
       checkedValue.setAttribute('value', "Don't send");
       const sendOptionLab = document.getElementById('send-option-lab')
       sendOptionLab.classList.add('hidden');
-
     }
-
   })
-
-
 
   document.getElementById('add-btn').addEventListener('click', function () {
     const form = document.getElementById('recipient-form').elements;
@@ -82,25 +86,17 @@ window.addEventListener('load', function () {
       popUp.classList.remove('hidden')
       popUp.innerHTML = ""
       popUp.innerHTML += `
-    <h4>
-    Dear <strong>` + recipient.recipientName + `</strong>, do you really want to add you to the list of recipients?
-    </h4>
-    <button id="popup-btn">YES, I WANT</button>
-    `
+        <p>
+        Dear <strong>` + recipient.recipientName + `</strong>, you will be included in our newsletter list!
+        </p>
+        <button id="popup-btn">I UNDERSTAND</button>
+        `
 
       document.getElementById('popup-btn').addEventListener('click', function () {
-        const recipientForm = document.getElementById('recipient-form')
-        recipientForm.classList.remove('show-form')
-        const cover = document.getElementById('cover')
-        cover.classList.add('hidden')
-        const popUp = document.getElementById('pop-up')
-        popUp.classList.add('hidden')
+        formDisapear()
+        popupDisapear()
         renderTable()
       })
-
-
-
-
 
     } else {
       console.log('form not valid')
@@ -147,6 +143,7 @@ window.addEventListener('load', function () {
     tbody.innerHTML = '';
     const recipientsList = localStorage.recipientList ? JSON.parse(localStorage.recipientList) : "";
     if (recipientsList.length) {
+      table.classList.remove('hidden')
       recipientsList.forEach(function (recipient, index) {
 
         recipient = JSON.parse(recipient)
@@ -185,6 +182,7 @@ window.addEventListener('load', function () {
           const tbody = table.getElementsByTagName('tbody')[0];
           const tRowToDelete = tbody.getElementsByTagName('tr')[recipientId];
           tRowToDelete.innerHTML = '';
+          location.reload();
         } else {
           const table = document.getElementById('recipient-table');
           table.classList.add('hidden')
