@@ -28,8 +28,8 @@
         <div class="input-wraper">
           <label id="send-option-lab" name="send-option" class=" hidden">
 
-            Please send me notifications every: <select id="send-option" class="hidden">
-              <option selected value=""></option>
+            Please send me notifications every: <select id="send-option">
+              <option selected value="" id="empty-option"></option>
               <option value="day">day</option>
               <option value="week">week</option>
               <option value="month">month</option>
@@ -38,9 +38,9 @@
           </label>
         </div>
       </div>
-      <button type="button" id="save-btn">ADD RECIPIENT</button>
+      <button type="button" id="add-btn">ADD RECIPIENT</button>
       <input type="hidden" name="recipient-id">
-      <button type="button" id="close-form-btn">CLOSE FORM</button>
+      <!-- <button type="button" id="close-form-btn">CLOSE FORM</button> -->
 
 
     </form>
@@ -62,6 +62,10 @@
       <tbody></tbody>
     </table>
 
+    <div id="cover" class="hidden">
+      <div id="pop-up" class="hidden">
+      </div>
+    </div>
 
 
 

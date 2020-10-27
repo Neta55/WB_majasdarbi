@@ -1,11 +1,36 @@
 window.addEventListener('load', function () {
-  const openFormBtn = document.getElementById('open-btn').addEventListener('click', function () {
-    document.getElementById('recipient-form').classList.add('show-form')
-  })
-  const closeFormBtn = document.getElementById('close-form-btn').addEventListener('click', function () {
-    document.getElementById('recipient-form').classList.remove('show-form')
+  // document.getElementById('open-btn').addEventListener('click', function () {
+  //   document.getElementById('recipient-form').classList.add('show-form')
+  // })
 
+  document.getElementById('open-btn').addEventListener('click', function () {
+    const form = document.getElementById('recipient-form');
+    let position = -208;
+    const id = setInterval(apearing, 5);
+    function apearing() {
+      if (position == -8) {
+        clearInterval(id);
+        form.classList.add('show-form')
+      } else {
+        position++;
+        form.style.left = position + 'px';
+      }
+    }
   })
+
+  // function formApear() {
+  //   const form = document.getElementById('recipient-form');
+  //   const width = 0;
+  //   const id = setInterval(apearing, 10);
+  //   function apearing() {
+  //     if (width == 100) {
+  //       clearInterval(id);
+  //     } else {
+  //       width++;
+  //       form.style.width = width + '%';
+  //     }
+  //   }
+  // }
 
   const checkedValue = document.getElementById('check-send')
   checkedValue.addEventListener('click', function () {
@@ -14,23 +39,21 @@ window.addEventListener('load', function () {
       checkedValue.setAttribute('value', 'Must send');
       const sendOptionLab = document.getElementById('send-option-lab')
       sendOptionLab.classList.remove('hidden');
-      const sendOption = document.getElementById('send-option')
-      sendOption.classList.remove('hidden');
+      const emptyOption = document.getElementById('empty-option');
+      emptyOption.remove()
 
     } else {
       checkedValue.setAttribute('value', "Don't send");
       const sendOptionLab = document.getElementById('send-option-lab')
       sendOptionLab.classList.add('hidden');
-      const sendOption = document.getElementById('send-option')
-      sendOption.classList.add('hidden');
-      sendOption.value = ""
+
     }
 
   })
 
 
 
-  document.getElementById('save-btn').addEventListener('click', function () {
+  document.getElementById('add-btn').addEventListener('click', function () {
     const form = document.getElementById('recipient-form').elements;
 
     if (isFormValid(form)) {
@@ -53,13 +76,37 @@ window.addEventListener('load', function () {
         recipientList.push(JSON.stringify(recipient));
       }
       localStorage.recipientList = JSON.stringify(recipientList)
+      const cover = document.getElementById('cover')
+      cover.classList.remove('hidden')
+      const popUp = document.getElementById('pop-up')
+      popUp.classList.remove('hidden')
+      popUp.innerHTML = ""
+      popUp.innerHTML += `
+    <h4>
+    Dear <strong>` + recipient.recipientName + `</strong>, do you really want to add you to the list of recipients?
+    </h4>
+    <button id="popup-btn">YES, I WANT</button>
+    `
 
-      renderTable()
+      document.getElementById('popup-btn').addEventListener('click', function () {
+        const recipientForm = document.getElementById('recipient-form')
+        recipientForm.classList.remove('show-form')
+        const cover = document.getElementById('cover')
+        cover.classList.add('hidden')
+        const popUp = document.getElementById('pop-up')
+        popUp.classList.add('hidden')
+        renderTable()
+      })
+
+
+
 
 
     } else {
       console.log('form not valid')
     }
+
+
   })
 
 
@@ -97,12 +144,14 @@ window.addEventListener('load', function () {
   function renderTable() {
     const table = document.getElementById('recipient-table');
     const tbody = table.getElementsByTagName('tbody')[0];
-    tbody.innerHTML = ''
+    tbody.innerHTML = '';
     const recipientsList = localStorage.recipientList ? JSON.parse(localStorage.recipientList) : "";
-    recipientsList.forEach(function (recipient, index) {
-      recipient = JSON.parse(recipient)
-      let nrpk = parseInt(index) + 1
-      tbody.innerHTML += `
+    if (recipientsList.length) {
+      recipientsList.forEach(function (recipient, index) {
+
+        recipient = JSON.parse(recipient)
+        let nrpk = parseInt(index) + 1
+        tbody.innerHTML += `
             <tr>
               <td>`+ nrpk + `.</td>
               <td>`+ recipient.recipientName + `</td>
@@ -113,9 +162,13 @@ window.addEventListener('load', function () {
             </tr>
       `
 
-    })
+      })
 
+    } else {
+      const table = document.getElementById('recipient-table');
+      table.classList.add('hidden')
 
+    }
     const deleteBtns = document.getElementsByClassName('delete-btn');
     Object.values(deleteBtns).forEach(function (btn) {
       btn.addEventListener('click', function (ev) {
@@ -124,17 +177,19 @@ window.addEventListener('load', function () {
         const recipientList = JSON.parse(localStorage.recipientList);
         recipientList.splice(recipientId, 1);
         localStorage.recipientList = JSON.stringify(recipientList);
+        if (recipientsList.length) {
+          // location.reload();
 
-        // location.reload();
+          // vai labāks, ātrāks variants izdzēst / pārrakstīt tikai konkrēto rindu
+          const table = document.getElementById('recipient-table');
+          const tbody = table.getElementsByTagName('tbody')[0];
+          const tRowToDelete = tbody.getElementsByTagName('tr')[recipientId];
+          tRowToDelete.innerHTML = '';
+        } else {
+          const table = document.getElementById('recipient-table');
+          table.classList.add('hidden')
+        }
 
-        // vai labāks, ātrāks variants izdzēst / pārrakstīt tikai konkrēto rindu
-        const table = document.getElementById('recipient-table');
-        const tbody = table.getElementsByTagName('tbody')[0];
-        const tRowToDelete = tbody.getElementsByTagName('tr')[recipientId];
-        tRowToDelete.innerHTML = '';
-
-        // vai
-        // renderTable()
 
       })
     })
