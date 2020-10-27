@@ -17,6 +17,18 @@ window.addEventListener('load', function () {
       }
     }
 
+    const table = document.getElementById('recipient-table');
+    let tabPosition = 80;
+    const tabId = setInterval(goToRight, 5);
+    function goToRight() {
+      if (tabPosition == 280) {
+        clearInterval(tabId);
+      } else {
+        tabPosition++;
+        table.style.left = tabPosition + 'px';
+      }
+    }
+
   }
 
   function formDisapear() {
@@ -29,6 +41,17 @@ window.addEventListener('load', function () {
       } else {
         position--;
         form.style.left = position + 'px';
+      }
+    }
+    const table = document.getElementById('recipient-table');
+    let tabPosition = 280;
+    const tabId = setInterval(goToLeft, 5);
+    function goToLeft() {
+      if (tabPosition == 80) {
+        clearInterval(tabId);
+      } else {
+        tabPosition--;
+        table.style.left = tabPosition + 'px';
       }
     }
   }
