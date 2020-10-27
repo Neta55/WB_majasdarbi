@@ -1,6 +1,6 @@
 body {
   background-image: url("/WB_majasdarbi/9/img/TILE.svg");
-  background-size: 40px;
+  background-size: 30px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -156,7 +156,7 @@ select:hover {
 
 #recipient-table td {
   border: 1px solid #000;
-  padding: 7px;
+  padding: 5px;
   border-radius: 4px;
 }
 
