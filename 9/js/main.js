@@ -63,7 +63,14 @@ window.addEventListener('load', function () {
     popUp.classList.add('hidden')
   }
 
+  function resetForm() {
+    document.getElementById('recipient-form').reset();
+    const sendOptionLab = document.getElementById('send-option-lab')
+    sendOptionLab.classList.add('hidden');
+    const checkedValue = document.getElementById('check-send')
+    checkedValue.setAttribute('value', "Don't send");
 
+  }
 
   const checkedValue = document.getElementById('check-send')
   checkedValue.addEventListener('click', function () {
@@ -71,8 +78,6 @@ window.addEventListener('load', function () {
       checkedValue.setAttribute('value', 'Must send');
       const sendOptionLab = document.getElementById('send-option-lab')
       sendOptionLab.classList.remove('hidden');
-      const emptyOption = document.getElementById('empty-option');
-      emptyOption.remove()
     } else {
       checkedValue.setAttribute('value', "Don't send");
       const sendOptionLab = document.getElementById('send-option-lab')
@@ -120,7 +125,7 @@ window.addEventListener('load', function () {
         popupDisapear()
         formDisapear()
         renderTable()
-        document.getElementById('recipient-form').reset()
+        resetForm()
       })
 
     } else {
@@ -146,7 +151,7 @@ window.addEventListener('load', function () {
 
     if (recipientName.length < 4) {
       const errorMsg = document.getElementsByClassName('error-msg recipient-name')[0];
-      errorMsg.innerHTML = "Min 4 characters needed for your name"
+      errorMsg.innerHTML = "Min 4 characters needed for your name!"
       isFormValid = false;
     }
 
@@ -156,6 +161,14 @@ window.addEventListener('load', function () {
     if (!re.test(email)) {
       const errorMsg = document.getElementsByClassName('error-msg email')[0];
       errorMsg.innerHTML = "Incorect email!"
+      isFormValid = false;
+    }
+
+    const sendOption = form.namedItem('send-option').value;
+    sendOption
+    if (checkedValue.checked === true && sendOption.length < 1) {
+      const errorMsg = document.getElementsByClassName('error-msg send-option')[0];
+      errorMsg.innerHTML = "Choose how often you want to receive messages!"
       isFormValid = false;
     }
 
@@ -172,10 +185,9 @@ window.addEventListener('load', function () {
       recipientsList.forEach(function (recipient, index) {
 
         recipient = JSON.parse(recipient)
-        let nrpk = parseInt(index) + 1
         tbody.innerHTML += `
             <tr>
-              <td>`+ nrpk + `.</td>
+              <td>.</td>
               <td>`+ recipient.recipientName + `</td>
               <td>`+ recipient.email + `</td>
               <td>`+ recipient.setSend + `</td>
@@ -199,17 +211,14 @@ window.addEventListener('load', function () {
         const recipientList = JSON.parse(localStorage.recipientList);
         recipientList.splice(recipientId, 1);
         localStorage.recipientList = JSON.stringify(recipientList);
-        if (recipientsList.length) {
-          // location.reload();
 
-          // vai labāks, ātrāks variants izdzēst / pārrakstīt tikai konkrēto rindu
-          const table = document.getElementById('recipient-table');
-          const tbody = table.getElementsByTagName('tbody')[0];
-          const tRowToDelete = tbody.getElementsByTagName('tr')[recipientId];
-          tRowToDelete.innerHTML = '';
-          location.reload();
-        } else {
-          const table = document.getElementById('recipient-table');
+        const table = document.getElementById('recipient-table');
+        const tbody = table.getElementsByTagName('tbody')[0];
+        const tRowToDelete = tbody.getElementsByTagName('tr')[recipientId];
+        tRowToDelete.innerHTML = '';
+
+        const newRecipientList = JSON.parse(localStorage.recipientList);
+        if (newRecipientList.length === 0) {
           table.classList.add('hidden')
         }
 

@@ -1,6 +1,6 @@
 body {
-  background-image: url("/WB_majasdarbi/9/img/TILE.svg");
-  background-size: 30px;
+  background-image: url("/WB_majasdarbi/9/img/tile.svg");
+  background-size: 25px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -53,7 +53,7 @@ button:active {
 }
 
 
-form {
+#recipient-form {
   position: fixed;
   top: 0;
   z-index: 5;
@@ -61,12 +61,12 @@ form {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #ee82ee;
+  background-color: #f0f;
   color: white;
   padding: 10px;
 }
 
-label {
+#recipient-form label {
   font-size: 15px;
 }
 
@@ -75,7 +75,7 @@ label {
 
 }
 
-input {
+#recipient-form input {
   width: 100%;
   padding: 0 5px;
   outline: none;
@@ -85,7 +85,7 @@ input {
 
 }
 
-input:hover {
+#recipient-form input:hover {
   border: 1px solid #000;
 }
 
@@ -95,12 +95,12 @@ input:hover {
 }
 
 
-input[type='checkbox'] {
+#recipient-form input[type='checkbox'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  width: 18px !important;
+  width: 22px !important;
   height: 18px !important;
   margin-left: 0;
   margin-bottom: -3px;
@@ -114,7 +114,7 @@ input[type='checkbox'] {
 
 }
 
-input[type='checkbox']:checked:after {
+#recipient-form input[type='checkbox']:checked:after {
   content: '✔';
   color: #000;
 }
@@ -129,14 +129,14 @@ input[type='checkbox']:checked:after {
   color: #000;
 }
 
-select {
+#recipient-form select {
   border: none;
   outline: none;
   font-size: 15px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-select:hover {
+#recipient-form select:hover {
   border: 1px solid #000;
 }
 
@@ -144,20 +144,36 @@ select:hover {
   position: absolute;
   top: 20px;
   min-width: 60%;
-  border-spacing: 5px;
-
+  border-spacing: 0;
+  counter-reset: serial-number;
+  border: 1px solid #000;
 }
+
+#recipient-table td:first-child:before {
+  counter-increment: serial-number;
+  content: counter(serial-number);
+}
+
 
 #recipient-table th {
   background-color: #000;
   color: #fff;
-  border-radius: 4px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding: 2px;
+}
+
+#recipient-table th:first-child {
+  border-left-color: #000;
+}
+
+#recipient-table th:last-child {
+  border-right-color: #000;
 }
 
 #recipient-table td {
   border: 1px solid #000;
   padding: 5px;
-  border-radius: 4px;
 }
 
 #recipient-table tr {
@@ -176,53 +192,41 @@ select:hover {
 
 #add-btn {
   background-color: #fff;
-  color: #ee82ee;
+  color: #f0f;
   padding: 5px 30px;
   margin-top: 20px;
 }
 
 #add-btn:hover {
-  color: #f0f;
+  color: #000;
   border: 1px solid #000;
 }
 
-#add-btn:active {
-  transform: scale(0.9);
-}
-
-
 
 .delete-btn {
-  padding: 0 15px;
+  padding: 0;
   border-radius: 0px;
   background-color: #fff;
-  color: #ee82ee;
+  color: #f0f;
 
 }
 
 .delete-btn:hover {
-  background-color: #fff;
-  color: #f0f;
+  color: #000;
 }
 
-.delete-btn:active {
-  transform: scale(0.9);
-}
 
 #popup-btn {
-  background-color: #ee82ee;
+  background-color: #f0f;
   color: #fff;
   width: 100%;
   border-radius: 4px;
 }
 
 #popup-btn:hover {
-  background-color: #f0f;
+  color: #000;
 }
 
-#popup-btn:active {
-  transform: scale(0.9);
-}
 
 #pop-up {
   position: fixed;
@@ -235,7 +239,7 @@ select:hover {
   flex-direction: column;
   justify-content: center;
   background-color: #fff;
-  color: #ee82ee;
+  color: #f0f;
   text-align: center;
   padding: 20px;
 
@@ -268,18 +272,26 @@ footer {
   line-height: 0;
   display: flex;
   justify-content: center;
-  background-color: #ffffcc;
+  background-color: blueviolet;
 
 }
 
 
-footer .index-link,
-.index-link:link,
-.index-link:visited {
-
-  color: white;
+footer a,
+footer a:link,
+footer a:visited {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  color: #fff;
   line-height: 0;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+}
+
+footer a:hover {
+  color: #000;
+  text-decoration: underline;
 }
